@@ -1,0 +1,129 @@
+.navigation{
+    &__checkbox{
+       display: none;
+    }
+    &__button{
+      background-color: $color-white;
+      height: 5rem;
+      width: 5rem;
+      position: fixed;
+      top: 3.5rem;
+      right: 3.5rem;
+      border-radius: 50%;
+      z-index: 2000;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 1rem 3rem rgba($color-black, $alpha: .1);
+    }
+    &__background{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        position: fixed;
+        background-image: radial-gradient(rgba($color-red,1),rgba($color-navy,1));
+        top: 4rem;
+        right: 4rem;
+        z-index: 1000;
+        transition: transform .6s cubic-bezier(0.11, 0, 0.5, 0);
+      //transform: scale(50);
+    }
+    &__nav{
+           height: 100vh;
+           width: 0%;
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 1500;
+           opacity: 0;
+           transition: all .9s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+    &__list{
+           list-style: none;         
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           text-align: center;
+           width: 100%;
+           overflow: hidden;//list refresh krtey tym aa rhi thi to overflow use krne se hatt gyi
+    }
+    &__item:not(:last-child){
+         margin-bottom:1.5rem;
+    }
+    &__link{
+    &:link,&:visited{
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 1rem 2rem;
+        font-family: inherit;
+        color:$color-red;
+        text-transform: uppercase;
+        background-size: 280%;
+        border-radius: 4rem;
+        display: inline-block;
+        transition: all .5s;
+        background-image: linear-gradient(205deg,$color-transparent 0%,$color-transparent 50%,$color-white 50%);
+                    }
+                    span{
+                      margin-right: 1.5rem;
+                    }
+        &:hover,&:active{
+              background-position : 100%;
+              color:darken($color-white,20%);
+              transform: translateX(3rem);
+               } 
+        }
+        //functionality
+        &__checkbox:checked ~ &__background{
+          transform: scale(80);
+        }
+        &__checkbox:checked ~ &__nav{
+          opacity: 1;
+          width: 100%;
+        }
+        //ICON
+        &__icon{
+          position: relative;
+          margin-top: 2.5rem;
+          &,&::before,&::after
+          {
+            width: 2.5rem;
+            height: .2rem;
+            background-color: rgba($color-black,.8);
+            display: inline-block;
+        }
+        &::before,&::after{
+          content:"" ;
+          position: absolute;
+          top: 0;
+          transition: all .3s;
+        }
+        &::before{
+               top: -.8rem;
+               left: 0;
+               //transform-origin: left; this  property is really very cool
+        }
+        &::after{
+          top: .8rem;
+          left: 0;
+        }
+      }
+      &__button:hover &__icon::before{
+        transform: translateY(.1rem);
+      }
+      &__button:hover &__icon::after{
+        transform: translateY(-.1rem);
+      }
+      &__checkbox:checked ~ &__button &__icon{
+        background-color: $color-transparent;
+      }
+      &__checkbox:checked ~ &__button &__icon::after{
+        top: 0;
+        transform: rotate(135deg);//jyda ghumaane k liye 180-45=135deg waise cross 45deg se bn jaata
+      }
+      &__checkbox:checked ~ &__button &__icon::before{
+        top: 0;
+        transform: rotate(-135deg);
+      }
+}

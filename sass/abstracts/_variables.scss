@@ -1,0 +1,28 @@
+//colors for the project 1
+$color-white:white;
+$color-black:black;
+$color-grey:grey;
+$color-navy:navy;
+$color-light-red:rgb(50,0,0);
+$color-dark-red:rgb(150,0,0);
+$color-red:red;
+$color-light-green:rgb(0,70,0);
+$color-light-grey:#f7f7f7;/*light grey*/
+$color-green:rgb(0,250,0);
+$color-pink:pink;
+$color-primary:#ffb900;
+$color-primary-light:#ff7730;
+$color-secondary:#2998ff;
+$color-secondary-light:#5643fa;
+$color-dark-pink:darken(pink,10%);
+$color-light-white:rgb(168, 155, 155);
+$color-transparent:transparent;
+$color-orange:orange;
+$color-orangered:orangered;
+
+
+// variables for grid
+$grid-width:100rem;
+$gutter-vertical:2rem;
+$gutter-horizontal:6rem;
+$default-font:1.6rem;

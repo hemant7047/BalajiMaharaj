@@ -1,0 +1,137 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    //transition: all .2s; //hover krne pr aaraam se transition hota but hover k saath  (&__side ) ye likhne se bhi ho gya ye
+     position: relative;
+     height:31.5rem; //kai baar dono jagah pr likhna padhta h bcoz clearfix error aa jaaqtey h
+    &__side{
+
+        background-color: $color-white;
+        height:31.5rem;
+        transition: all .8s ease;
+        position: absolute;
+        top:0;
+        left:0;
+         width: 100%;
+        backface-visibility: hidden;//for show proper content
+        border-radius: .5rem;
+        box-shadow: 1rem 2rem  2rem rgba($color-red, $alpha: .15);
+        overflow: hidden;//overlapping & collapse ki problem solve krne k liye we use overflow property
+        &--front{
+         background-color:$color-white;
+        }
+        &--back{
+           transform: rotateY(180deg);
+           &-1{
+            background-image: linear-gradient(to right bottom,rgba($color-primary,.6),rgba($color-primary-light,1));
+           }
+
+           &-2{
+            background-image: linear-gradient(to right bottom,rgba($color-pink,.8),rgba($color-dark-pink,1));
+           }
+
+           &-3{
+            background-image: linear-gradient(to right bottom,rgba($color-secondary,.8),rgba($color-secondary-light,1));
+           }
+        }
+    }
+     &:hover &__side--front{                     //&__side isliye lagaaya h taaki side bhi change hoti hui dikhe that's it
+                                         //side m bhi translate property lgaane k liye lgaaya h 
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0deg);
+    }
+    //front__designing
+    &__picture{
+        background-size: cover;
+        border-radius: .5rem;
+        height: 15rem;
+        background-blend-mode:color;//we have many blend mode gradient lgaane k baad kai baar image show nhi hoti tb ham 
+                                    //background-blend-mode: property ka use krtey h;
+        clip-path: polygon(0% 0%,100% 0%,100% 90%,0% 100%);
+        &--1{
+            background-image: linear-gradient(to right,rgba($color-primary,.4),rgba($color-primary-light,.4)),url("../img/photo5.jpg");
+        }
+        &--2{
+            background-image: linear-gradient(to right,rgba($color-red,.4),rgba($color-dark-red,.4)),url("../img/photo6.jpg");
+        }
+        &--3{
+            background-image: linear-gradient(to right,rgba($color-primary,.4),rgba($color-primary-light,.4)),url("../img/photo7.jpg");
+            width: 180%;
+        }
+    }
+
+    &__heading{
+        position: absolute;
+        top:8rem;
+        left:.5rem;
+        color:$color-white;
+        text-align: right;
+        font-weight: 400;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        margin: 0;
+        width: 98%;
+        //padding-right: 2rem;
+    }
+    &__heading-span{
+        padding:.7rem 1.1rem;
+        -webkit-box-decoration-break:clone;//this property is for better view on clone mode but now i'm put in that property in none 
+        box-decoration-break: clone;//formation bcoz i use the &nsbp in index code 
+        &--1{
+            background-image: linear-gradient(to right,rgba($color-primary,.4),rgba($color-primary-light,.4));
+        }
+        &--2{
+            background-image: linear-gradient(to right,rgba($color-red,.4),rgba($color-dark-red,.4));//,url("../img/photo6.jpg");
+        }
+        &--3{
+            background-image: linear-gradient(to right,rgba($color-primary,.4),rgba($color-primary-light,.4));//,url("../img/photo7.jpg");
+        }
+    }
+    &__details{
+        ul{
+            list-style-type: none;
+            width: 80%;
+            margin:2rem auto 0rem auto;
+            li{
+                font-size: 1.3rem;
+                text-align: center;
+                padding: .2rem 2rem;
+                color:darken($color-pink,20%);
+                &:not(:last-child){
+                    border-bottom: .1rem solid rgba($color-grey,.8);
+                }
+            }
+        }
+    }
+    &__cta{
+       position: absolute;
+       top:45%;
+       left: 50%;
+       text-align: center;
+       transform: translate(-50%,-50%);
+       width: 90%;
+      /* &--btn{
+           text-align: center; ye card ka btn maine buttons.scss waali file m declare kr dia h...
+           margin-right: 8rem;
+       }*/
+    }
+    &__price-box{
+        margin-bottom: 5rem;
+        &--only{
+             font-size: 4rem;
+             font-weight: 500;
+             color:$color-white;
+             text-align: center;
+        }
+        &--value{
+            //margin-top: 2rem;
+            font-size: 2rem;
+            font-weight: 400;
+            color:$color-white;
+            text-align: center;
+        }
+    }
+
+}

@@ -1,0 +1,40 @@
+
+*{
+    padding:0rem;
+    margin:0rem;
+    box-sizing: border-box;
+    font-variant: small-caps;
+}
+
+
+html{
+    font-size: 93.75%;/*html m hme value daalni pdegi bcoz jo ham font size denaa chahtey h usko ham default
+    font size se into krenge like maine font-size dia tha 15px so default hota h 16px to 15/16*100=93.75% aaya wo value ham html{}tag
+    main daalenge okay! (this defines what 1rem is) bc0z 1rem=16px default value*/
+    
+  
+
+    @include respond(tab-land){                     //width<1200px;                    landscape waala isliye uper likha h bcoz
+        font-size: 56.25%;                         // 1rem=9px,9/16*100=56.25%         500<900/1200 900 & 1200 so jo niche hoga uska 
+    }                                             //                                   font-size le lega vo isliye portrait ka 50%
+    
+
+    @include respond(phone){                  // width<600px;
+        font-size: 28.125%;                  // 1rem=4.5px,4.5/16*100=28.125%
+    }
+
+    @include respond(big-screen){          // width>1800px;
+        font-size: 75%;                   //  1rem=12px,12/16*100=75%
+    }
+    @include respond(tab-port){                  //width<900px;                       h isliye portrait waala nicche rakha h aur 
+        font-size: 50%;                         // 1rem=8px,8/16*100=50%              koi baat nhi h
+    }
+
+    }
+body{
+    box-sizing: border-box;
+    margin: 1rem;
+    @include respond(phone){
+        margin: 0rem ;
+    }
+}

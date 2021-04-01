@@ -1,0 +1,48 @@
+@keyframes moveInLeft{
+    0%{
+     opacity: 0;
+     //transform: translateX(-25rem);// rotate(180deg);
+    }
+    60%{
+        opacity: .3;
+//        transform:translateY(50rem);
+    }
+    80%{
+        opacity: .6;
+        //transform:translateY(100rem);
+            }
+    100%{
+       opacity: 1;
+//       transform:translateX(0rem) /*rotate(360deg);*/
+    }
+}
+@keyframes moveInRight{
+0%{
+    opacity: 0;
+    //transform:translateX(5rem);// rotate(180deg)
+}
+60%{
+   opacity: .3;
+  //  transform: translateY(-30rem);
+}
+/*.logo:hover{animation:moveInLeft 2s ease-out;}*/
+80%{
+    opacity: .6;
+ //   transform:translateY(-100rem)
+}
+100% {
+    opacity:1;
+  //  transform:translateX(0rem)
+    }
+}
+ @keyframes moveInTop{
+/*   20%{
+        transform:translateX(-30%) ;
+    }
+    60%{
+        transform:translateX(30%) ;
+    }*/
+    80%{
+        transform: rotate(360deg);
+    }
+}

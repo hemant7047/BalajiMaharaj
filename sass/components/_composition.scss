@@ -1,0 +1,53 @@
+.composition{
+    position: relative;
+  &__photo{
+       width: 75%;
+       box-shadow: 1rem 2rem 2rem rgba($color-black, .8);
+       border-radius: 2rem;
+       position: absolute;
+       border: 2px double $color-pink;
+       transition: all 2s;
+       //outline-offset: .3rem;
+       opacity: .5;
+       z-index: 10;//optional
+   &--p1{
+       left: 0;
+       top: 1.5rem;
+   }
+
+   &--p2{
+       right: 0;
+       top: 5.5rem;
+       left: 4.5rem;
+   }
+ 
+   &--p3{
+    left: 9rem;
+    right: 0;
+    top: 9.5rem;
+   }
+ 
+   &--p4{
+    left: 13.5rem;
+    right: 0;
+    top: 13.5rem;
+   }
+    &:hover{
+        box-shadow: .5rem 1rem 2rem rgba($color-black, .8);
+        transform:scale(1) translateX(4rem);// rotate(360deg);
+        z-index: 20;
+      //  outline: .8rem double $color-pink;
+        opacity: 1;
+    }
+}
+      &:hover &__photo:not(:hover)
+        {
+            transform: scale(1.2);
+            opacity: .2;
+        }
+/*      isse ye hua h jaise hme jis photo pr hover kr rhe h uska size naa badle baaki
+       sbka size scale(1) & opacity change ho jaaye that's it
+        agr ham &__photo iske andr p1,p2,p3 ya p4 likhtey h to uss pr jb hover krenge to kisi pr koi effect 
+        nhi padega but 3no m se kisi aur pr hover krenge to sirf ussi pr effect pdega,isliye hmne not k andr puri
+         class likhi hai taaki sbpr effect pde agr koi perticular p1,p2,p3 ya p4 likhtey to sirf uss pr effect padhta*/
+}

@@ -1,0 +1,57 @@
+.section-about{
+    background-color: $color-light-grey;
+    padding:15rem 0;
+    margin-top:-10vh;  
+    margin-bottom: -7vh;
+       /* -(minus) m krne se depth m jaati h margin like top likhogey to uper jayega
+    bottom likhogey tb bhi uper ko margin hogi*/
+
+}
+.section-features{
+    background-image: linear-gradient(to right , rgba($color-light-green,.6) ,rgba($color-light-red,.6)), 
+    url("https://akm-img-a-in.tosshub.com/sites/dailyo/fb_feed_images/story_image/201805/hanuman-fb_051418120245.jpg");
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: skewY(-3deg);
+    margin-bottom: 8rem;
+
+    & > * {
+    transform: skewY(3deg);
+    opacity: .5;// this is for directly attached file from .section-features
+    }
+}
+.section-tours{
+    background-color: $color-light-grey;
+    padding:10rem 0 1rem 0 ;
+    margin-top: -25vh;
+}
+.section-stories{
+    padding:15rem 0rem;
+    position: relative;
+    //background-color: $color-white;
+ }
+ .section-book{
+     padding: 10rem 0;
+     background-image: linear-gradient(to right,rgba($color-green,.5),rgba($color-red,.6));
+ }
+
+ .book{                                                                //ye linear gradient clip path ka kaam krega
+     background-image:linear-gradient(105deg,                                   
+                                    rgba($color-white,1)50%,         
+                                    rgba($color-transparent,.3)50%),    
+                                    url("../img/background_5.jpg");
+//ye ham use nhi kr sktey bcoz ya to linear gradient ko as a ||,background-image:linear-gradient(to right,rgba($color-navy,.2),rgba($color-white,.2)),
+//clip path krke use krlo ya normal gradient dono 1 saath nhi ho sktey||,url("../img/background_5.jpg");
+     background-size: 100%;
+     height: 35rem;
+     width: 70rem;
+     //border-radius: .3rem;
+     box-shadow: 0 1.5rem 4rem rgba($color-black,.5);
+     margin-left: 4.5rem;
+     outline: .5rem solid $color-black;
+     &__form{
+         padding: 4rem;
+         width: 70%;
+     }
+ }

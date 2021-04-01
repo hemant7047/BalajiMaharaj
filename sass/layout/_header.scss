@@ -1,0 +1,56 @@
+
+.header{
+    height:95vh;
+    background-image: linear-gradient(to right , rgba($color-light-green,.6) ,rgba($color-light-red,.6)), 
+    url("../img/background_3.jpg");
+    background-position:top;
+    // background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+    clip-path: polygon(0% 0%,100% 0%,100% 90%,0% 100%);
+    backface-visibility: hidden;
+    overflow: hidden;
+      /*clip-path: polygon(50% 0%,80% 80%,20% 80%);*/
+      /*clip-path:ellipse(80px  160px at 80px 170px);*/
+      /*clip-path: inset(20% 30% 20% 30%);*/
+      /*clip-path: circle(20% at 30% 40%);*/
+      /*clip-path: polygon(0% 0%,100% 0%,100% 85%,0% 100%);*/
+      &__word{
+        letter-spacing: .9rem;
+        font-size: 3rem;
+        color: $color-white;
+        position: absolute;
+        top:40%;
+        left:46%;
+        font-variant:small-caps;
+        font-weight: 600;
+        transform: translate(-40% ,-60%);/*for the properspacing*(-50%,-50% krne se bilkul center m a jayega)*/
+        text-align: center;
+        animation-name: moveInLeft;
+        animation-duration: 3s;
+        animation-timing-function: ease-out;/*function working tym EASE-IN m tez slide hoga*/
+        transition: all 2s;
+        /*animation-delay: 2s;*/
+      &:hover{
+        text-shadow: .2rem 1rem 1rem $color-white;
+      }
+      }
+      &__prabhu{position: absolute;
+        color: $color-white;
+        letter-spacing: .8rem;
+        top:51.5%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        text-align: center;
+        font-size: 3.5rem;
+        width: 75%;
+        // display: inline-block;
+        animation:moveInRight 3s ease-out;
+        transition: all 2s;
+        backface-visibility: hidden;
+        &:hover{
+          text-shadow: .2rem 1rem 1rem $color-white;
+          }
+    }
+    
+}
